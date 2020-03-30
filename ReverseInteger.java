@@ -29,13 +29,13 @@ class Solution {
         int max = Integer.MAX_VALUE;			// Integer MAX last digit 7 and positive number
         int min = Integer.MIN_VALUE;			// Integer MIN last digit 8 and negative number
         while (x != 0) {						// going with reverse number logic
-            int rem = x % 10;										// remainder (last digit)
-			x = x / 10;												// number except last digit
+            int rem = x % 10;						// remainder (last digit)
+		x = x / 10;						// number except last digit
             if ((n > max / 10) || (n == max / 10 && rem > 7))		// will it overflow towards max?
-          	    return 0;
+		return 0;
             if ((n < min / 10) || (n == min / 10 && rem < -8))		// will it overflow towards min?
-                return 0;
-            n = (n * 10) + rem;										// forming reverse number
+              	return 0;
+            n = (n * 10) + rem;						// forming reverse number
         }
         return n;
     }
