@@ -23,7 +23,7 @@ The median is (2 + 3)/2 = 2.5
 */
 
 /*
-*Solution Reference : https://www.youtube.com/watch?v=LPFhl65R7ww
+Solution Reference : https://www.youtube.com/watch?v=LPFhl65R7ww
 */
 
 class Solution {
