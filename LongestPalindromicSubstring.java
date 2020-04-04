@@ -19,26 +19,26 @@ class Solution {
 
     // Dynamic Programming Solution
     public String longestPalindrome(String s) {
-        if (s == null || s.equals(""))
+        if (s == null || s.equals(""))      // empty or null check
             return s;
         int l = s.length();
-        if (l == 1)
+        if (l == 1)                         // single character is a palindrome
             return s;
         
-        boolean dp[][] = new boolean[l][l];
-        for (int i = 0; i < l; i++) {
+        boolean dp[][] = new boolean[l][l]; // DP array
+        for (int i = 0; i < l; i++) {       
             dp[i][i] = true;
         }
         
-        int max = 1;
-        int start_index = 0;
-        for (int k = 2; k <= l; k++) {
+        int max = 1;                        // length of palindromic substring
+        int start_index = 0;                // store starting index of palindromic substring
+        for (int k = 2; k <= l; k++) {                  // length of substring iteration
             int len = 0;
-            for (int i = 0; i < l - k + 1; i++) {
+            for (int i = 0; i < l - k + 1; i++) {       // check each substring of fixed length
                 int j = i + k - 1;
                 char ci = s.charAt(i);
                 char cj = s.charAt(j);
-                if (k == 2) {
+                if (k == 2) {                           // special case for length 2 substrings
                     if (ci == cj) {
                         dp[i][j] = true;
                         len = 2;
