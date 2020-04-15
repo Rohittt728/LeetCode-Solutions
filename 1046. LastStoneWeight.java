@@ -26,6 +26,7 @@ Note:
 */
 
 
+// Solution1 : fetching max, sorting, repeat
 class Solution {
     public int lastStoneWeight(int[] stones) {
         
@@ -47,5 +48,26 @@ class Solution {
         if (len == 1)							// if single element remains return it, else 0
             return stones[0];
         return 0;
+    }
+}
+
+
+
+// Solution2 : using max heap property, priority queue in java
+class Solution {
+    public int lastStoneWeight(int[] stones) {
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder());
+        for (int i : stones)
+            pq.add(i);
+        
+        int a = 0;
+        int b = 0;
+        while (pq.size() > 1) {
+            a = pq.poll();
+            b = pq.poll();
+            if (a > b)
+                pq.add(a - b);
+        }
+        return pq.size() == 1 ? pq.poll() : 0;
     }
 }
