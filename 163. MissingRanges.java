@@ -12,7 +12,7 @@ Output: ["2", "4->49", "51->74", "76->99"]
 
 
 
-// Solution1 
+// Solution1 : clean approach
 public class Solution {
     /*
      * @param nums: a sorted integer array
@@ -54,7 +54,7 @@ public class Solution {
 
 
 
-// Solution2 : Solution1 simplified
+// Solution2
 public class Solution {
     /*
      * @param nums: a sorted integer array
