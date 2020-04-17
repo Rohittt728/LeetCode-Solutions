@@ -33,7 +33,7 @@ public class Solution {
                 ans.add(getRange(lower, nums[i] - 1));
             }
             
-            if (i > 0 && nums[i] > lower && nums[i] != nums[i - 1] && nums[i] != nums[i - 1] + 1) {
+            if (i > 0 && nums[i] != nums[i - 1] && nums[i] != nums[i - 1] + 1) {
                 if (nums[i - 1] == upper)
                     return ans;
                 ans.add(getRange(nums[i-1] + 1, nums[i] - 1));
