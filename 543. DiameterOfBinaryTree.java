@@ -60,7 +60,7 @@ class Solution {
 }
 
 
-// Solution1 : Recursive, less complex, finding height in the same method
+// Solution2 : Recursive, less complex, finding height in the same method
 class Solution {
     int ans = 0;
     public int diameterOfBinaryTree(TreeNode root) {
