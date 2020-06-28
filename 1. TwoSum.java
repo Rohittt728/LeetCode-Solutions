@@ -23,7 +23,7 @@ public int[] twoSum(int[] nums, int target) {
         if (h.containsKey(n)) {                 // reduced to Search problem
             return new int[] {h.get(n), i};
         }
-        h.put (nums[i], i);                     // else populate hashmap
+        h.put (nums[i], i);                     // else populate the hashmap
     }
     return null;
 }
