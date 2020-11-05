@@ -37,6 +37,8 @@ The number of nodes in the tree is in the range [0, 105].
  *     }
  * }
  */
+
+// Solution 1 : Recursion DFS
 class Solution {
     public int minDepth(TreeNode root) {
         
@@ -47,5 +49,39 @@ class Solution {
         int right = minDepth(root.right);
         
         return (left == 0 || right == 0) ? (left + right + 1) : (1 + Math.min(left, right));
+    }
+}
+
+
+
+// Solution 2 : BFS
+class Solution {
+    public int minDepth(TreeNode root) {
+        
+        if (root == null)
+            return 0;
+        
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        q.add(root);
+        int depth = 1;
+        
+        while (q.size() > 0) {
+            int size = q.size();
+            
+            while (size-- > 0) {
+                TreeNode node = q.poll();
+                
+                if (node.left == null && node.right == null)
+                    return depth;
+                
+                if (node.left != null)
+                    q.add(node.left);
+                
+                if (node.right != null)
+                    q.add(node.right);
+            }
+            depth++;
+        }
+        return 0;
     }
 }
